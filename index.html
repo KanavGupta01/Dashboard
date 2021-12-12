@@ -142,7 +142,7 @@
         };
 
         async function getLocation() {
-            await $.get("https://ipinfo.io", function (response) {
+            await $.get("https://ipwhois.app/json/", function (response) {
                 $(".location").fadeOut(function () {
                     $(this).empty().append(" In " + removeDiacritics(response.city) + ", " + response.region).fadeIn();
                 });
