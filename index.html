@@ -99,18 +99,18 @@
 
 
         async function getQuote() {
-            await $.getJSON("https://type.fit/api/quotes", function (data) {
-                let num = Math.floor(Math.random() * 1001);
+            await $.getJSON("https://zenquotes.io/api/today", function (data) {
+                let num = 0
                 $(".quote").fadeOut(function () {
-                    $(this).empty().append(data[num].text).fadeIn();
+                    $(this).empty().append(data[num].q).fadeIn();
                 });
 
-                if (data[num].author == null) {
-                    data[num].author = "Unknown";
+                if (data[num].a == null) {
+                    data[num].a = "Unknown";
                 }
 
                 $(".author").fadeOut(function () {
-                    $(this).empty().append("- " + data[num].author).fadeIn();
+                    $(this).empty().append("- " + data[num].a).fadeIn();
                 });
             });
         };
