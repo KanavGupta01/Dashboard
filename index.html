@@ -99,7 +99,7 @@
 
 
         async function getQuote() {
-            await $.getJSON("'https://dummyjson.com/quotes/random'", function (data) {
+            await $.getJSON("https://dummyjson.com/quotes/random", function (data) {
                 $(".quote").fadeOut(function () {
                     $(this).empty().append(data.quote).fadeIn();
                 });
